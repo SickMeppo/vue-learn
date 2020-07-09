@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <h2>Todo application</h2>
+    <div class="Todos-container">
+        <h2>Todos</h2>
+        <router-link class="link" to="/">Home</router-link>
         <AddTodo
                 @add-todo="addTodo"
         />
@@ -44,3 +45,12 @@
         },
     }
 </script>
+<style scoped>
+    a {
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    .Todos-container {
+        width: 100%;
+    }
+</style>

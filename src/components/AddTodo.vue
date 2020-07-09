@@ -35,7 +35,10 @@
 <style scoped>
     form {
         display: flex;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
 
     input {
