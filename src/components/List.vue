@@ -2,9 +2,10 @@
     <div class="container">
         <ul class="list">
             <Item
-                    v-for="todo of todos"
+                    v-for="(todo, i) of todos"
                     v-bind:todo="todo"
                     v-bind:key="todos.id"
+                    v-bind:index="i"
                     v-on:remove-todo="removeTodo"
             />
         </ul>

@@ -5,7 +5,7 @@
                   <input type="checkbox"
                          v-on:change="todo.completed = !todo.completed">
               </label>
-              <strong>{{todo.id}}</strong>
+              <strong>{{index + 1}}</strong>
               {{todo.title}}
        </span>
         <button
@@ -23,7 +23,8 @@
             todo: {
                 type: Object,
                 required: true,
-            }
+            },
+            index: Number
         },
         name: "Item"
     }
