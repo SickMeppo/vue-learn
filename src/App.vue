@@ -2,7 +2,7 @@
     <div id="app">
         <h1>Todo application</h1>
         <AddTodo
-                @add-todo=""
+                @add-todo="addTodo"
         />
         <List
           v-bind:todos="todos"
@@ -34,6 +34,9 @@
         methods: {
            removeTodo(id) {
                this.todos = this.todos.filter(t => t.id !==id)
+           },
+           addTodo(todo) {
+              this.todos.push(todo)
            }
         },
     }
