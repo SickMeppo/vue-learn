@@ -1,9 +1,10 @@
 <template>
     <div class="container">
         <ul class="list">
-            <TodoItem
+            <Item
                     v-for="todo of todos"
                     v-bind:todo="todo"
+                    v-bind:key="todos.id"
                     v-on:remove-todo="removeTodo"
             />
         </ul>
@@ -11,11 +12,11 @@
 </template>
 
 <script>
-    import TodoItem from "./TodoItem";
+    import Item from "./Item";
     export default {
         props: ['todos'],
-        name: "TodoList",
-        components: {TodoItem},
+        name: "List",
+        components: {Item},
         methods: {
             removeTodo(id) {
                 this.$emit('remove-todo', id)

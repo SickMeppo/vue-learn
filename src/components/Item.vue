@@ -25,7 +25,7 @@
                 required: true,
             }
         },
-        name: "TodoItem"
+        name: "Item"
     }
 </script>
 

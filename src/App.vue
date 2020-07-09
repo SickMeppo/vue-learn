@@ -1,7 +1,10 @@
 <template>
     <div id="app">
         <h1>Todo application</h1>
-        <TodoList
+        <AddTodo
+                @add-todo=""
+        />
+        <List
           v-bind:todos="todos"
           @remove-todo="removeTodo"
         />
@@ -10,7 +13,8 @@
 </template>
 
 <script>
-    import TodoList from "./components/TodoList";
+    import List from "./components/List";
+    import AddTodo from "./components/AddTodo";
 
     export default {
         name: 'App',
@@ -24,7 +28,8 @@
             }
         },
         components: {
-            TodoList,
+            AddTodo,
+            List,
         },
         methods: {
            removeTodo(id) {
