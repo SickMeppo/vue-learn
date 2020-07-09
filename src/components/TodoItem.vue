@@ -1,13 +1,19 @@
 <template>
     <li>
-       <span>
+       <span v-bind:class="{done: todo.completed}">
               <label>
-                  <input type="checkbox">
+                  <input type="checkbox"
+                         v-on:change="todo.completed = !todo.completed">
               </label>
               <strong>{{todo.id}}</strong>
               {{todo.title}}
        </span>
-        <button class="close-btn">&times</button>
+        <button
+                class="close-btn"
+                v-on:click="$emit('remove-todo', todo.id)"
+        >
+            &times
+        </button>
     </li>
 </template>
 
@@ -32,12 +38,17 @@
         border: 1px solid #ccc;
         border-radius: 5px;
     }
+
     .close-btn {
         background: red;
         color: white;
         border-radius: 50%;
         font-weight: bold;
         border: none;
+    }
+
+    .done {
+        text-decoration: line-through;
     }
 
     input {

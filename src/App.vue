@@ -3,6 +3,7 @@
         <h1>Todo application</h1>
         <TodoList
           v-bind:todos="todos"
+          @remove-todo="removeTodo"
         />
 
     </div>
@@ -24,7 +25,12 @@
         },
         components: {
             TodoList,
-        }
+        },
+        methods: {
+           removeTodo(id) {
+               this.todos = this.todos.filter(t => t.id !==id)
+           }
+        },
     }
 </script>
 
