@@ -1,7 +1,10 @@
 <template>
-    <div>
+    <div class="container">
         <ul class="list">
-            <TodoItem/>
+            <TodoItem
+                    v-for="todo of todos"
+                    v-bind:todo="todo"
+            />
         </ul>
     </div>
 </template>
@@ -9,6 +12,7 @@
 <script>
     import TodoItem from "./TodoItem";
     export default {
+        props: ['todos'],
         name: "TodoList",
         components: {TodoItem},
     }
@@ -17,6 +21,10 @@
 <style scoped>
     .list {
         list-style: none;
-        padding-left: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 100%;
     }
 </style>
