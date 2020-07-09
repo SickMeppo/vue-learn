@@ -6,10 +6,11 @@
                 @add-todo="addTodo"
         />
         <List
+                v-if="todos.length"
                 v-bind:todos="todos"
                 @remove-todo="removeTodo"
         />
-
+        <p v-else>No todos!</p>
     </div>
 </template>
 
